@@ -1,7 +1,7 @@
 package com.heinika.pureweather.network
 
 import com.heinika.pureweather.json.adapter.WeatherJsonAdapter
-import com.heinika.pureweather.entity.WeatherEntity
+import com.heinika.pureweather.entity.Weather
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
@@ -29,7 +29,7 @@ private val retrofit: Retrofit
 
 interface WeatherApiService {
     @GET("weather?appid=$APP_ID&units=metric")
-    fun getWeather(@Query("q") cityName: String): Call<WeatherEntity>
+    fun getWeather(@Query("q") cityName: String): Call<Weather>
 }
 
 object WeatherApi {
