@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.heinika.pureweather.entity.Weather
 
-@Database(entities = [Weather::class], version = 1, exportSchema = false)
+@Database(entities = [DatabaseWeather::class], version = 1, exportSchema = false)
 abstract class WeatherDatabase : RoomDatabase() {
     abstract val weatherDao: WeatherDao
 }
@@ -16,7 +16,7 @@ private var INSTANCE: WeatherDatabase? = null
 fun getInstance(context: Context): WeatherDatabase {
     var instance = INSTANCE
     if (instance == null) {
-        synchronized(Weather::class.java) {
+        synchronized(WeatherDatabase::class.java) {
             instance = Room.databaseBuilder(
                 context,
                 WeatherDatabase::class.java,

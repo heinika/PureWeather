@@ -8,7 +8,6 @@ import kotlinx.coroutines.withContext
 import retrofit2.await
 
 class WeatherRepository(private val database:WeatherDatabase) {
-    val weather = database.weatherDao.get()
 
     suspend fun refresWeather(cityName:String){
         withContext(Dispatchers.IO){
