@@ -7,6 +7,9 @@ import com.squareup.moshi.FromJson
 class WeatherJsonAdapter {
     @FromJson
     fun weatherFormJson(jsonWeatherEntity: JsonWeatherEntity):Weather{
-        return Weather(jsonWeatherEntity.name,jsonWeatherEntity.main.temp)
+        return Weather(
+            jsonWeatherEntity.name,
+            jsonWeatherEntity.main.temp,
+        )
     }
 }
