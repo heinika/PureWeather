@@ -22,26 +22,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val model = ViewModelProviders.of(this).get(WeatherViewModel::class.java)
-        weatherViewModel.weather.observe(this, Observer { weatherEntity ->
-            textView.text = "city: ${weatherEntity.name},weather: ${weatherEntity.temperture}"
-        })
-        WeatherApi.weatherApiService.getWeather("beijing").enqueue(object: Callback<Weather>{
-            override fun onFailure(call: Call<Weather>, t: Throwable) {
-                log(t.toString())
-            }
-
-            override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-                response.body()?.let {
-                    model.weather.value = it
-                    log(response.body().toString())
-                }
+        weatherViewModel.weathers.observe(this, Observer { weathers ->
+            if(weathers.isNotEmpty()){
+                textView.text = "city: ${weathers.get(0).name},weather: ${weathers.get(0).temperture}"
             }
         })
     }
 
     fun log(message : String){
-        Log.i(Companion.TAG,message)
+        Log.i(TAG,message)
     }
 
     companion object {
