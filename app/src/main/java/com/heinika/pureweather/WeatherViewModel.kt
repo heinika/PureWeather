@@ -14,8 +14,6 @@ import kotlinx.coroutines.launch
 class WeatherViewModel(application: Application) : AndroidViewModel(application) {
     private val viewModelJob = SupervisorJob()
 
-
-
     private val viewModeScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     private val database = getInstance(application)
