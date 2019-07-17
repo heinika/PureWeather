@@ -4,12 +4,13 @@ import com.heinika.pureweather.database.DatabaseWeather
 
 data class Weather(
     val name: String,
-    val temperture: Double,
     val main: String,//main weather
-    val humidity: Int,//湿度
+    val temperture: Double,
     val temp_min:Double,
     val temp_max:Double,
+    val humidity: Int,//湿度
     val visibility: Int,
+    val pressure: Int,
     val sunrise: Int,
     val sunset: Int,
     val speed: Float,
@@ -17,5 +18,5 @@ data class Weather(
 )
 
 fun Weather.asDatabaseModel():DatabaseWeather{
-    return DatabaseWeather(name,temperture)
+    return DatabaseWeather(name,main,temperture,temp_min,temp_max,humidity,visibility,pressure,sunrise,sunset,speed,deg)
 }

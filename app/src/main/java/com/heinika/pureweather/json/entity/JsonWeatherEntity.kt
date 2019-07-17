@@ -49,6 +49,6 @@ data class Weather(
 )
 
 data class Wind(
-    val speed: Double,
-    val deg: Double
+    val speed: Float,
+    val deg: Int
 )
