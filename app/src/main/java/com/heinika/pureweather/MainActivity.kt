@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
                 textViewMaxTemperature.text = weathers[0].temp_max.toString() + "℃"
                 textViewMinTemperature.text = weathers[0].temp_min.toString() + "℃"
                 textViewCityName.text = weathers[0].name
+                val sunriseData = Date(weathers[0].sunrise)
+                val sunsetData = Date(weathers[0].sunset)
+                textViewSunriseTime.text = weathers[0].sunrise.toString()
+                textViewSunsetTime.text = weathers[0].sunset.toString()
 //                textViewtemperature.text = "name: ${weathers[0].name},\n" +
 //                        "main: ${weathers[0].main},\n" +
 //                        "temperature: ${weathers[0].temperature},\n" +

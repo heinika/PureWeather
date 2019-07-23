@@ -11,8 +11,8 @@ data class Weather(
     val humidity: Int,//湿度
     val visibility: Int,
     val pressure: Int,
-    val sunrise: Int,
-    val sunset: Int,
+    val sunrise: Long,
+    val sunset: Long,
     val speed: Float,
     val deg: Int
 )

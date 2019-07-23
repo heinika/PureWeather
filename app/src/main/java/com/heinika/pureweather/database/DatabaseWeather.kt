@@ -15,8 +15,8 @@ data class DatabaseWeather(
     val humidity: Int,
     val visibility: Int,
     val pressure: Int,
-    val sunrise: Int,
-    val sunset: Int,
+    val sunrise: Long,
+    val sunset: Long,
     val speed: Float,
     val deg: Int
 )
