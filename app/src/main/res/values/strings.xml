@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PureWeather</string>
+    <string name="unknow_temp">unknow temperature</string>
 </resources>

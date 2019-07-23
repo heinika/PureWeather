@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         weatherViewModel.weathers.observe(this, Observer { weathers ->
             if (weathers.isNotEmpty()) {
-                textView.text = "name: ${weathers[0].name},\n" +
+                textViewtemperature.text = "name: ${weathers[0].name},\n" +
                         "main: ${weathers[0].main},\n" +
-                        "temperture: ${weathers[0].temperture},\n" +
+                        "temperature: ${weathers[0].temperature},\n" +
                         "temp_min: ${weathers[0].temp_min},\n" +
                         "temp_max: ${weathers[0].temp_max},\n" +
                         "humidity: ${weathers[0].humidity},\n" +

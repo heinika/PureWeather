@@ -9,7 +9,7 @@ data class DatabaseWeather(
     @PrimaryKey
     val name: String,
     val main: String,//main weather
-    val temperture: Double,
+    val temperature: Double,
     val temp_min: Double,
     val temp_max: Double,
     val humidity: Int,
@@ -26,7 +26,7 @@ fun List<DatabaseWeather>.asModel(): List<Weather> {
         Weather(
             name = it.name,
             main = it.main,
-            temperture = it.temperture,
+            temperature = it.temperature,
             temp_min = it.temp_min,
             temp_max = it.temp_max,
             humidity = it.humidity,
