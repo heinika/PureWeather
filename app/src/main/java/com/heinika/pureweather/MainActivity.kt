@@ -21,18 +21,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         weatherViewModel.weathers.observe(this, Observer { weathers ->
             if (weathers.isNotEmpty()) {
-                textViewtemperature.text = "name: ${weathers[0].name},\n" +
-                        "main: ${weathers[0].main},\n" +
-                        "temperature: ${weathers[0].temperature},\n" +
-                        "temp_min: ${weathers[0].temp_min},\n" +
-                        "temp_max: ${weathers[0].temp_max},\n" +
-                        "humidity: ${weathers[0].humidity},\n" +
-                        "visibility: ${weathers[0].visibility},\n" +
-                        "pressure: ${weathers[0].pressure},\n" +
-                        "sunrise: ${weathers[0].sunrise},\n" +
-                        "sunset: ${weathers[0].sunset},\n" +
-                        "speed: ${weathers[0].speed},\n" +
-                        "deg: ${weathers[0].deg}"
+                textViewtemperature.text = weathers[0].temperature.toString() + "℃"
+                textViewMaxTemperature.text = weathers[0].temp_max.toString() + "℃"
+                textViewMinTemperature.text = weathers[0].temp_min.toString() + "℃"
+                textViewCityName.text = weathers[0].name
+//                textViewtemperature.text = "name: ${weathers[0].name},\n" +
+//                        "main: ${weathers[0].main},\n" +
+//                        "temperature: ${weathers[0].temperature},\n" +
+//                        "temp_min: ${weathers[0].temp_min},\n" +
+//                        "temp_max: ${weathers[0].temp_max},\n" +
+//                        "humidity: ${weathers[0].humidity},\n" +
+//                        "visibility: ${weathers[0].visibility},\n" +
+//                        "pressure: ${weathers[0].pressure},\n" +
+//                        "sunrise: ${weathers[0].sunrise},\n" +
+//                        "sunset: ${weathers[0].sunset},\n" +
+//                        "speed: ${weathers[0].speed},\n" +
+//                        "deg: ${weathers[0].deg}"
             }
         })
     }
