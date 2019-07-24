@@ -36,8 +36,8 @@ data class Sys(
     val country: String,
     val id: Int,
     val message: Double,
-    val sunrise: Int,
-    val sunset: Int,
+    val sunrise: Long,
+    val sunset: Long,
     val type: Int
 )
 
@@ -50,5 +50,5 @@ data class Weather(
 
 data class Wind(
     val speed: Float,
-    val deg: Int
+    val deg: Int?
 )
